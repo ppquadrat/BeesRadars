@@ -1,18 +1,20 @@
 # BeesRadars
 Matlab scripts for the BeesRadars project
 
-1. Processing: level offset, find and retain peaks, average for each sample and channel, calculate peak_energy (integral of peaks surface), normalise to max channel value per sample
+## Processing: 
+level offset, find and retain peaks, average for each sample and channel, calculate peak_energy (integral of peaks surface), normalise to max channel value per sample
 
 `process.m` for static experiments and `process_rot.m` for rotating experiments
 `peak_energy_norm` variables will be saved in folder `data`
 
 you can set a path where the workspace will be saved, it is over 2GB, you will need the latest .mat files version enabled in Matlab
 
-2. Plot peak energy data: `plot_bee_angles_heights.m` 
+## Plot peak energy data: 
+`plot_bee_angles_heights.m` 
 
 You'll find the plots I produced in `peak energy plots`
 
-3. construct data model (lookup or Gaussian) for a given experiment
+## Construct data model (lookup or Gaussian) for a given experiment
 
 `construct_lookup_model.m` for a lookup model and `construct_gauss_model.m` for a Guassian model
 
@@ -20,7 +22,7 @@ the models are saved in folder `models`
 
 use cftool with my Gaussian function (custom equation) if you want to construct a Gaussian model for new data. 
 
-4. test data models across experiments
+## Test data models across experiments
 
 use a model from one experiment to predict angles for another experiment and compare with factual angles
 
@@ -28,7 +30,7 @@ use a model from one experiment to predict angles for another experiment and com
 
 You'll find validation plots in folder `cross-modelling plots`
 
-5. machine learning
+## Machine learning
 
 Data must be in form of a table, with angles being the first column and peak_energy_norm columns 2-6. See `prepare_ML_data.m`. Other scripts use it to prepare data
 
